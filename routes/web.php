@@ -39,6 +39,8 @@ Route::middleware(['auth', 'role:owner'])->group(function () {
 // Manager
 Route::middleware(['auth', 'role:manager'])->group(function () {
     Route::get('/manager/products', [ProductController::class, 'show'])->name('manager.products.index');
+    Route::get('/manager/transactions/report', [TransactionController::class, 'report'])->name('manager.transactions.report');
+    Route::get('/manager/products/print', [ProductController::class, 'print'])->name('manager.products.print');
 
 });
 
