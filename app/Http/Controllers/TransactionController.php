@@ -80,4 +80,11 @@ class TransactionController extends Controller
 
         return $pdf->stream('Transaksi.pdf');
     }
+
+        public function report()
+    {
+        $transactions = Transaction::with(['product', 'branch', 'user'])->get();
+
+        return view('transactions.report', compact('transactions'));
+    }
 }
