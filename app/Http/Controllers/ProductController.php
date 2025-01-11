@@ -110,4 +110,10 @@ public function soldPage($id)
     return view('products.sold', compact('product'));
 }
 
+public function print()
+{
+    $products = Product::all();
+    return view('products.print', compact('products'));
+}
+
 }

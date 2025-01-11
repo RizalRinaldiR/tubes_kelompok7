@@ -30,7 +30,13 @@
                        <x-nav-link :href="route('manager.products.index')" :active="request()->routeIs('manager.products.index') ">
                         {{ __('Produk') }}
                        </x-nav-link>
-                      @endrole
+                       <x-nav-link :href="route('manager.products.print')" :active="request()->routeIs('manager.products.print')">
+                        {{ __('Laporan Produk') }}
+                        </x-nav-link>
+                       <x-nav-link :href="route('manager.transactions.report')" :active="request()->routeIs('manager.transactions.report')">
+                           {{ __('Laporan Transaksi') }}
+                       </x-nav-link>
+                       @endrole
                       @hasrole('supervisor')
                        <x-nav-link :href="route('supervisor.products.index')" :active="request()->routeIs('supervisor.products.index') ">
                         {{ __('Produk') }}
